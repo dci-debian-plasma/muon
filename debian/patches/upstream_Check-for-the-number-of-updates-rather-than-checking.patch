@@ -1,0 +1,28 @@
+From 4a5e63d925c7e6538b2fc025c1c86cfc40e2bd48 Mon Sep 17 00:00:00 2001
+From: Rohan Garg <rohan16garg@gmail.com>
+Date: Sun, 13 Apr 2014 20:17:01 +0200
+Subject: [PATCH] Check for the number of updates rather than checking for the
+ updates-available file since the file can exist even when there are no
+ updates
+
+REVIEWED-BY: Aleix Pol <aleixpol@kde.org>
+---
+ libmuon/backends/ApplicationBackend/ApplicationNotifier.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/libmuon/backends/ApplicationBackend/ApplicationNotifier.cpp b/libmuon/backends/ApplicationBackend/ApplicationNotifier.cpp
+index c91605f..fe50193 100644
+--- a/libmuon/backends/ApplicationBackend/ApplicationNotifier.cpp
++++ b/libmuon/backends/ApplicationBackend/ApplicationNotifier.cpp
+@@ -139,7 +139,7 @@ void ApplicationNotifier::parseUpdateInfo()
+ 
+     // ';' not found, apt-check broke :("
+     
+-    if (QFile::exists("/var/lib/update-notifier/updates-available")) {
++    if (securityUpdates > 0 || updates > 0) {
+         setSystemUpToDate(false, updates, securityUpdates, securityUpdates > 0 ? AbstractKDEDModule::SecurityUpdate : NormalUpdate);
+     } else {
+         setSystemUpToDate(true);
+-- 
+1.9.1
+

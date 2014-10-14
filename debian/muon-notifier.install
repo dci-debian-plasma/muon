@@ -1,5 +1,5 @@
-/usr/lib/kde4/kded_muon-notifier.so
-/usr/share/kde4/apps/muon-notifier/muon-notifier.notifyrc
-/usr/share/kde4/apps/muon-notifier/releasechecker
-/usr/share/kde4/services/kded/muon-notifier.desktop
-usr/share/locale/*/LC_MESSAGES/muon-notifier.mo
+/usr/lib/kde4/kded_muonapplicationnotifier.so
+/usr/share/kde4/apps/muonabstractnotifier/muonabstractnotifier.notifyrc
+/usr/share/kde4/apps/muonapplicationnotifier/muonapplicationnotifier.notifyrc
+/usr/share/kde4/apps/muonapplicationnotifier/releasechecker
+/usr/share/kde4/services/kded/muonapplicationnotifier.desktop

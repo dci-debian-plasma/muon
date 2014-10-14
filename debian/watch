@@ -1,2 +1,2 @@
 version=3
-ftp://ftp.kde.org/pub/kde/stable/muon/([\d\.]+)/src/muon-([\d\.]+)\.tar\.bz2
+http://launchpad.net/muon/+download .*/muon-(.+)\.tar\.bz2

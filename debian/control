@@ -1,18 +1,18 @@
 Source: muon
 Section: kde
 Priority: optional
-Maintainer: Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>
-Uploaders: Sune Vuorela <sune@debian.org>
-Build-Depends: debhelper (>= 9.0.0~), pkg-kde-tools (>= 0.5.0), cmake,
- pkg-config, kdelibs5-dev, libqapt-dev (>= 1.4.0), libdebconf-kde-dev,
- libqjson-dev, libqoauth-dev, libqzeitgeist-dev
-Standards-Version: 3.9.2
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Jonathan Thomas <echidnaman@kubuntu.org>
+Build-Depends: debhelper (>= 9), pkg-kde-tools (>= 0.5.0), cmake,
+ pkg-config, kdelibs5-dev, libqapt-dev (>= 2.1.70), libdebconf-kde-dev,
+ libqjson-dev, libqoauth-dev, libattica-dev
+Standards-Version: 3.9.4
 Homepage: https://projects.kde.org/projects/extragear/sysadmin/muon/
 
 Package: muon
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libqapt-runtime,
- apt-xapian-index
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqapt2-runtime,
+ apt-xapian-index, libmuonprivate2 (= ${binary:Version})
 Recommends: muon-updater
 Description: package manager for KDE
  Muon is a graphical package manager for KDE.
@@ -33,23 +33,21 @@ Description: package manager for KDE
   * Support for download the latest changelog of a package
   * Package screenshots
 
-Package: muon-discover
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libqapt-runtime,
- app-install-data, apt-xapian-index
-Recommends: app-install-data-partner, ubuntu-sso-client
-Description: Utility for browsing, installing, and removing applications
- Muon Discover will help you browse through the huge applications library you
- have available and help you find the applications you're looking for.
+Package: muon-common
+Architecture: all
+Depends: ${misc:Depends}
+Breaks: muon-discover (<< 2.2.0-0ubuntu5~)
+Replaces: muon-discover (<< 2.2.0-0ubuntu5~)
+Description: Muon package manager suite (common data files)
+ Muon is a graphical package manager for the Plasma workspace.
  .
- To install or remove software using the Center, you need administrator
- access on the computer.
+ This package contains data files shared by various parts of the Muon suite.
 
 Package: muon-installer
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libqapt-runtime,
- app-install-data
-Recommends: app-install-data-partner, zeitgeist-core
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqapt2-runtime,
+ app-install-data, apt-xapian-index, libmuonprivate2 (= ${binary:Version})
+Recommends: app-install-data-partner
 Description: Utility for browsing, installing, and removing applications
  The Muon Software Center lets you browse and install thousands of
  applications available for Ubuntu. You can view available
@@ -60,29 +58,44 @@ Description: Utility for browsing, installing, and removing applications
  To install or remove software using the Center, you need administrator
  access on the computer.
 
+Package: muon-discover
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, muon-common (= ${source:Version}),
+ libqapt2-runtime,
+ app-install-data, apt-xapian-index, libmuonprivate2 (= ${binary:Version})
+Recommends: app-install-data-partner, ubuntu-sso-client
+Description: Utility for browsing, installing, and removing applications
+ Muon Discover will help you browse through the huge applications library you
+ have available and help you find the applications you're looking for.
+ .
+ To install or remove software using the Center, you need administrator
+ access on the computer.
+
 Package: muon-updater
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libqapt-runtime
-#Recommends: muon-notifier
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqapt2-runtime,
+ libmuonprivate2 (= ${binary:Version})
+Recommends: muon-notifier
 Description: update manager for KDE
  Muon Updater is a graphical update manager for KDE. It is part of the Muon
  family of software and provides an interface similar to that of Muon.
 
-#Package: muon-notifier
-#Architecture: any
-#Depends: ${shlibs:Depends}, ${misc:Depends}, muon-updater, update-manager-kde,
-# update-notifier-common
-#Description: update notifier for KDE
-# The Muon Notifier is an update notification daemon for KDE. It uses the KDE
-# Daemon frame (KDED) framework to present the user with update notifications,
-# providing an opportunity to launch the Muon Updater to deal with these
-# updates.
+Package: muon-notifier
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, muon-common (= ${source:Version}),
+ muon-updater,
+ ubuntu-release-upgrader-qt, update-notifier-common
+Description: update notifier for KDE
+ The Muon Notifier is an update notification daemon for KDE. It uses the KDE
+ Daemon frame (KDED) framework to present the user with update notifications,
+ providing an opportunity to launch the Muon Updater to deal with these
+ updates.
 
-Package: libmuonprivate1
+Package: libmuonprivate2
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, kdesudo, software-properties-kde
-Breaks: muon (<< 1.4.0-0r2)
-Replaces: muon (<< 1.4.0-0r2)
+Breaks: muon-installer (<< 1.3.65-0ubuntu2), libmuonprivate1
+Replaces: muon-installer (<< 1.3.65-0ubuntu2), libmuonprivate1
 Description: Runtime files for the Muon package management suite
  The Muon package management suite is a collection of package management
  applications built on the KDE platform.
@@ -93,10 +106,10 @@ Package: muon-dbg
 Section: debug
 Architecture: any
 Priority: extra
-Depends: ${misc:Depends}, libmuonprivate1 (= ${binary:Version}),
- muon (= ${binary:Version}) | muon-updater (= ${binary:Version})
-# | muon-notifier (= ${binary:Version})
-Recommends: kdelibs5-dbg
+Depends: ${misc:Depends}, libmuonprivate2 (= ${binary:Version}),
+ muon (= ${binary:Version}) | muon-updater (= ${binary:Version}) |
+ muon-notifier (= ${binary:Version})
+Recommends: qapt-dbg, kdelibs5-dbg
 Description: Muon debugging symbols
  This package contains debugging symbols for Muon.
  When Muon crashes, in most cases this package is

@@ -1,0 +1,11 @@
+usr/lib/libmuonprivate.so.2*
+usr/lib/libmuonapt.so
+usr/lib/kde4/muon-appsbackend.so
+usr/lib/kde4/muon-knsbackend.so
+usr/share/kde4/apps/libmuon/moo.ogg
+usr/share/kde4/apps/libmuon/categories/*
+usr/share/kde4/services/muon-applications-backend.desktop
+usr/share/kde4/services/muon-knsplasmoids-backend.desktop
+usr/share/kde4/services/muon-knscomics-backend.desktop
+usr/share/kde4/servicetypes/muonbackendplugin.desktop
+usr/share/locale/*/LC_MESSAGES/libmuon.mo

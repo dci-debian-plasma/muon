@@ -1,0 +1,128 @@
+From a882eeb2574af5fe7931166787911cb09975d12c Mon Sep 17 00:00:00 2001
+From: Lukas Appelhans <l.appelhans@gmx.de>
+Date: Thu, 3 Apr 2014 01:21:28 +0200
+Subject: [PATCH] Don't post another notification if the data didn't change!
+
+BUG:331434
+
+Conflicts:
+	libmuon/resources/AbstractKDEDModule.cpp
+---
+ libmuon/resources/AbstractKDEDModule.cpp | 27 ++++++++++++++++++++++-----
+ libmuon/resources/AbstractKDEDModule.h   |  9 +++++----
+ libmuon/resources/AbstractResource.h     |  1 +
+ 3 files changed, 28 insertions(+), 9 deletions(-)
+
+diff --git a/libmuon/resources/AbstractKDEDModule.cpp b/libmuon/resources/AbstractKDEDModule.cpp
+index df9b6fb..75fa3df 100644
+--- a/libmuon/resources/AbstractKDEDModule.cpp
++++ b/libmuon/resources/AbstractKDEDModule.cpp
+@@ -37,7 +37,14 @@ class AbstractKDEDModule::Private
+ {
+ public:
+     Private(AbstractKDEDModule * par, const QString &n, const QString &i) 
+-      : q(par), name(n), iconName(i), systemUpToDate(true), updateType(AbstractKDEDModule::NormalUpdate), statusNotifier(0) {}
++      : q(par), 
++        name(n), 
++        iconName(i), 
++        systemUpToDate(true), 
++        updateType(AbstractKDEDModule::NormalUpdate), 
++        statusNotifier(0),
++        updateCount(0),
++        securityUpdateCount(0) {}
+     ~Private() {}
+     
+     void __k__showMuon();
+@@ -50,6 +57,8 @@ public:
+     AbstractKDEDModule::UpdateType updateType;
+     KStatusNotifierItem * statusNotifier;
+     bool verbose;
++    int updateCount;
++    int securityUpdateCount;
+ };
+ 
+ AbstractKDEDModule::AbstractKDEDModule(const QString &name, const QString &iconName, QObject * parent)
+@@ -119,14 +128,13 @@ void AbstractKDEDModule::setSystemUpToDate(bool systemUpToDate, int updateCount,
+ 
+ void AbstractKDEDModule::setSystemUpToDate(bool systemUpToDate, int updateCount, int securityUpdateCount, UpdateType updateType, Notification notification)
+ {
+-    d->systemUpToDate = systemUpToDate;
+-    d->updateType = updateType;
+     if (!systemUpToDate) {
+         emit systemUpdateNeeded();
+         //TODO: Better message strings
+         QString message;
+         QString icon;
+-        if (d->updateType == SecurityUpdate) {
++
++        if (updateType == SecurityUpdate) {
+             message = i18n("A security update is available for your system.");
+             icon = "security-low";
+         } else {
+@@ -145,7 +153,12 @@ void AbstractKDEDModule::setSystemUpToDate(bool systemUpToDate, int updateCount,
+         d->statusNotifier->setOverlayIconByName(icon);
+         d->statusNotifier->setToolTip(icon, message, i18n("A system update is recommended"));
+         d->statusNotifier->setStatus(KStatusNotifierItem::Active);
+-        if (notification == ShowNotification) {
++
++        if (notification == ShowNotification || 
++	    (notification == ShowNotificationIfInformationChanged 
++	     && (d->updateCount != updateCount 
++	         || d->securityUpdateCount != securityUpdateCount
++	         || d->updateType != updateType))) {
+             KNotification::event("Update", i18n("System update available"), message, KIcon("svn-update").pixmap(KIconLoader::SizeMedium), nullptr, KNotification::CloseOnTimeout, KComponentData("muonabstractnotifier"));
+         }
+     } else {
+@@ -153,6 +166,10 @@ void AbstractKDEDModule::setSystemUpToDate(bool systemUpToDate, int updateCount,
+         d->statusNotifier->setStatus(KStatusNotifierItem::Passive);
+         d->statusNotifier->setToolTip("security-high", i18n("Your system is up-to-date."), i18n("No system update available"));
+     }
++    d->updateCount = updateCount;
++    d->securityUpdateCount = securityUpdateCount;
++    d->systemUpToDate = systemUpToDate;
++    d->updateType = updateType;
+ }
+ 
+ #include "AbstractKDEDModule.moc"
+diff --git a/libmuon/resources/AbstractKDEDModule.h b/libmuon/resources/AbstractKDEDModule.h
+index a88b9f8..4eb1196 100644
+--- a/libmuon/resources/AbstractKDEDModule.h
++++ b/libmuon/resources/AbstractKDEDModule.h
+@@ -36,7 +36,8 @@ public:
+     };
+     enum Notification {
+         ShowNotification = 0,
+-        DontShowNotification = 1
++        DontShowNotification = 1,
++	ShowNotificationIfInformationChanged = 2
+     };
+     Q_ENUMS(UpdateType);
+     virtual ~AbstractKDEDModule();
+@@ -54,9 +55,9 @@ signals:
+ protected:
+     AbstractKDEDModule(const QString &name, const QString &iconName, QObject * parent);
+     
+-    void setSystemUpToDate(bool systemUpToDate, UpdateType updateType = NormalUpdate, Notification notification = ShowNotification);
+-    void setSystemUpToDate(bool systemUpToDate, int updateCount, UpdateType updateType = NormalUpdate, Notification notification = ShowNotification);
+-    void setSystemUpToDate(bool systemUpToDate, int updateCount, int securityUpdateCount, UpdateType updateType = NormalUpdate, Notification notification = ShowNotification);
++    void setSystemUpToDate(bool systemUpToDate, UpdateType updateType = NormalUpdate, Notification notification = ShowNotificationIfInformationChanged);
++    void setSystemUpToDate(bool systemUpToDate, int updateCount, UpdateType updateType = NormalUpdate, Notification notification = ShowNotificationIfInformationChanged);
++    void setSystemUpToDate(bool systemUpToDate, int updateCount, int securityUpdateCount, UpdateType updateType = NormalUpdate, Notification notification = ShowNotificationIfInformationChanged);
+     
+ private:
+     class Private;
+diff --git a/libmuon/resources/AbstractResource.h b/libmuon/resources/AbstractResource.h
+index dc4102d..0fb3d74 100644
+--- a/libmuon/resources/AbstractResource.h
++++ b/libmuon/resources/AbstractResource.h
+@@ -23,6 +23,7 @@
+ 
+ #include <QtCore/QObject>
+ #include <QUrl>
++#include <QStringList>
+ 
+ #include "libmuonprivate_export.h"
+ #include "PackageState.h"
+-- 
+1.9.1
+

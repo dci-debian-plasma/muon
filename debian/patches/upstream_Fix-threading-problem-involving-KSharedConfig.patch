@@ -1,0 +1,70 @@
+From 70cc5d6532829d8bf1a95cd46ca5403eb195e6ec Mon Sep 17 00:00:00 2001
+From: Aleix Pol <aleixpol@kde.org>
+Date: Wed, 7 May 2014 18:16:37 +0200
+Subject: [PATCH] Fix threading problem involving KSharedConfig
+
+Stop using it in favor of QSharedPointer<KConfig>, so that we don't access
+the shared database, which is not thread-safe.
+
+BUG: 333599
+---
+ libmuon/backends/ApplicationBackend/Application.cpp | 7 +------
+ libmuon/backends/ApplicationBackend/Application.h   | 3 +--
+ 2 files changed, 2 insertions(+), 8 deletions(-)
+
+diff --git a/libmuon/backends/ApplicationBackend/Application.cpp b/libmuon/backends/ApplicationBackend/Application.cpp
+index dda91e6..9ffae21 100644
+--- a/libmuon/backends/ApplicationBackend/Application.cpp
++++ b/libmuon/backends/ApplicationBackend/Application.cpp
+@@ -51,6 +51,7 @@
+ 
+ Application::Application(const QString& fileName, QApt::Backend* backend)
+         : AbstractResource(0)
++        , m_data(new KConfig(fileName, KConfig::SimpleConfig))
+         , m_backend(backend)
+         , m_package(0)
+         , m_isValid(true)
+@@ -60,7 +61,6 @@ Application::Application(const QString& fileName, QApt::Backend* backend)
+ {
+     static QByteArray currentDesktop = qgetenv("XDG_CURRENT_DESKTOP");
+ 
+-    m_data = desktopContents(fileName);
+     m_isTechnical = getField("NoDisplay").toLower() == "true"
+                     || !hasField("Exec")
+                     || getField("NotShowIn", QByteArray()).contains(currentDesktop)
+@@ -435,11 +435,6 @@ int Application::downloadSize()
+     return m_package->downloadSize();
+ }
+ 
+-KSharedConfigPtr Application::desktopContents(const QString& filename)
+-{
+-    return KSharedConfig::openConfig(filename, KConfig::SimpleConfig);
+-}
+-
+ void Application::clearPackage()
+ {
+     m_package = 0;
+diff --git a/libmuon/backends/ApplicationBackend/Application.h b/libmuon/backends/ApplicationBackend/Application.h
+index 00f29b1..af31cfc 100644
+--- a/libmuon/backends/ApplicationBackend/Application.h
++++ b/libmuon/backends/ApplicationBackend/Application.h
+@@ -100,7 +100,7 @@ private slots:
+ private:
+     QString buildDescription(const QByteArray& data, const QString& source);
+     
+-    KSharedConfigPtr m_data;
++    QSharedPointer<KConfig> m_data;
+     QApt::Backend *m_backend;
+     QApt::Package *m_package;
+     QByteArray m_packageName;
+@@ -110,7 +110,6 @@ private:
+     bool m_isExtrasApp;
+     bool m_sourceHasScreenshot;
+ 
+-    KSharedConfigPtr desktopContents(const QString& filename);
+     QApt::PackageList addons();
+     QVector<QPair<QString, QString> > locateApplication(const QString &_relPath, const QString &menuId) const;
+     bool hasField(const char* field) const;
+-- 
+1.9.1
+
