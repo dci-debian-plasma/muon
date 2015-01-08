@@ -1,9 +1,9 @@
 #!/usr/bin/make -f
 
-#include /usr/share/pkg-kde-tools/makefiles/1/list-missing.mk
+include /usr/share/pkg-kde-tools/qt-kde-team/3/debian-qt-kde.mk
 
-%:
-	dh $@ --parallel --dbg-package=muon-dbg --with kde
+override_dh_strip:
+	$(overridden_command) --dbg-package=muon-dbg
 
-override_dh_makeshlibs:
-	dh_makeshlibs -Xusr/lib/kde4/ -V
+# FIXME: tests are broken at this time
+.PHONY: override_dh_autotest

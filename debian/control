@@ -6,7 +6,6 @@ Uploaders: Sune Vuorela <sune@debian.org>
 Build-Depends: cmake,
                debhelper (>= 9.0.0~),
                extra-cmake-modules,
-               libdebconf-kde-dev (>= 1.0.0),
                libkf5attica-dev,
                libkf5config-dev,
                libkf5configwidgets-dev,
@@ -20,7 +19,8 @@ Build-Depends: cmake,
                libkf5wallet-dev,
                libkf5widgetsaddons-dev,
                libphonon4qt5-dev,
-               libqapt-dev (>= 3.0.0),
+               libphonon4qt5experimental-dev,
+               libqca-qt5-2-dev,
                pkg-config,
                pkg-kde-tools (>= 0.5.0)
 Standards-Version: 3.9.2
@@ -64,20 +64,6 @@ Description: Utility for browsing, installing, and removing applications
  To install or remove software using the Center, you need administrator
  access on the computer.
 
-Package: muon-installer
-Architecture: any
-Depends: app-install-data, libqapt-runtime, ${misc:Depends}, ${shlibs:Depends}
-Recommends: app-install-data-partner, zeitgeist-core
-Description: Utility for browsing, installing, and removing applications
- The Muon Software Center lets you browse and install thousands of
- applications available for Ubuntu. You can view available
- applications by category, or search quickly by name or description.
- You can also examine the applications already installed, and remove
- those you no longer need.
- .
- To install or remove software using the Center, you need administrator
- access on the computer.
-
 Package: muon-updater
 Architecture: any
 Depends: libqapt-runtime, ${misc:Depends}, ${shlibs:Depends}
@@ -85,11 +71,22 @@ Description: update manager for KDE
  Muon Updater is a graphical update manager for KDE. It is part of the Muon
  family of software and provides an interface similar to that of Muon.
 
-Package: libmuonprivate1
+Package: muon-notifier
+Architecture: any
+Depends: muon-updater,
+         update-manager-kde,
+         update-notifier-common,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: update notifier for KDE
+ The Muon Notifier is an update notification daemon for KDE. It uses the KDE
+ Daemon frame (KDED) framework to present the user with update notifications,
+ providing an opportunity to launch the Muon Updater to deal with these
+ updates.
+
+Package: libmuon
 Architecture: any
 Depends: kdesudo, software-properties-kde, ${misc:Depends}, ${shlibs:Depends}
-Breaks: muon (<< 1.4.0-0r2)
-Replaces: muon (<< 1.4.0-0r2)
 Description: Runtime files for the Muon package management suite
  The Muon package management suite is a collection of package management
  applications built on the KDE platform.
@@ -100,7 +97,7 @@ Package: muon-dbg
 Section: debug
 Architecture: any
 Priority: extra
-Depends: libmuonprivate1 (= ${binary:Version}),
+Depends: libmuon (= ${binary:Version}),
          muon (= ${binary:Version}) | muon-updater (= ${binary:Version}),
          ${misc:Depends}
 Recommends: kdelibs5-dbg

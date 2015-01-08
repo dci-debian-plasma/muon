@@ -1,11 +1,8 @@
 usr/bin/muon-discover
-usr/share/applications/kde4/muon-discover-category.desktop
-usr/share/applications/kde4/muon-discover.desktop
-usr/share/icons/hicolor/128x128/apps/muondiscover.png
-usr/share/icons/hicolor/16x16/apps/muondiscover.png
-usr/share/icons/hicolor/22x22/apps/muondiscover.png
-usr/share/icons/hicolor/32x32/apps/muondiscover.png
-usr/share/icons/hicolor/48x48/apps/muondiscover.png
-usr/share/icons/hicolor/scalable/apps/muon-discover.svgz
-usr/share/icons/hicolor/scalable/apps/muon-discover.svgz
+usr/share/applications/muon-discover-category.desktop
+usr/share/applications/muon-discover.desktop
+usr/share/desktoptheme/muon-contenttheme/
+usr/share/icons/hicolor/*/apps/muondiscover.*
+usr/share/kxmlgui5/muondiscover/
 usr/share/locale/*/LC_MESSAGES/muon-discover.mo
+usr/share/muondiscover/

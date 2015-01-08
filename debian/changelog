@@ -1,5 +1,12 @@
+muon (5.1.50-0ubuntu1) UNRELEASED; urgency=medium
+
+  * New upstream release based on KDE Frameworks 5
+  * muon-installer is no more remove binary package and all references
+
+ -- Harald Sitter <sitter@kde.org>  Thu, 08 Jan 2015 18:36:20 +0100
+
 muon (1.4.1-0r1) UNRELEASED; urgency=low
 
   * Initial release. Based on work by Jose Manuel Santamaria Lena (Closes: #605133)
 
- -- Sune Vuorela <sune@debian.org> Sun, 01 Jul 2014 18:55:11 +0200
+ -- Sune Vuorela <sune@debian.org>  Sun, 01 Jul 2014 18:55:11 +0200
