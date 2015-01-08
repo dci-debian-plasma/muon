@@ -1,6 +1,7 @@
 usr/bin/muon-discover
-usr/lib/kde4/imports/*
-usr/share/applications/kde4/muon-discover*
-usr/share/kde4/apps/desktoptheme/muon-contenttheme/
-usr/share/kde4/apps/muon-discover/*
+usr/share/applications/muon-discover-category.desktop
+usr/share/applications/muon-discover.desktop
+usr/share/desktoptheme/muon-contenttheme/
+usr/share/kxmlgui5/muondiscover/
 usr/share/locale/*/LC_MESSAGES/muon-discover.mo
+usr/share/muondiscover/

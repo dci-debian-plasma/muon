@@ -1,4 +1,4 @@
-/usr/bin/muon-updater
-/usr/share/kde4/apps/muon-updater/muon-updaterui.rc
-usr/share/applications/kde4/muon-updater.desktop
+usr/bin/muon-updater
+usr/share/applications/muon-updater.desktop
+usr/share/kxmlgui5/muonupdater/
 usr/share/locale/*/LC_MESSAGES/muon-updater.mo
