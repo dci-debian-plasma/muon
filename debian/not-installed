@@ -1,1 +1,3 @@
-usr/lib/*/libmuonprivate.so
+./usr/bin/muon-exporter
+./usr/lib/i386-linux-gnu/libmuonprivate.so
+./usr/lib/x86_64-linux-gnu/libmuonprivate.so
