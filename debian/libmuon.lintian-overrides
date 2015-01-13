@@ -1,0 +1,3 @@
+libmuon: package-name-doesnt-match-sonames libMuonApt libMuonNotifiers libmuonprivate5
+libmuon: shlib-without-versioned-soname usr/lib/*/libMuonApt.so libMuonApt.so
+libmuon: shlib-without-versioned-soname usr/lib/*/libMuonNotifiers.so libMuonNotifiers.so

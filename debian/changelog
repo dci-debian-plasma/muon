@@ -3,6 +3,9 @@ muon (5.1.50-0ubuntu1) UNRELEASED; urgency=medium
   * New upstream release based on KDE Frameworks 5
   * muon-installer is no more remove binary package and all references
   * Drop all patches, they all came from upstream anyway
+  * Remove muon.1 it was wrong and is now outdated
+  * Fix lintian warnings and ignore all that are bogus or not worth
+    fixing
 
  -- Harald Sitter <sitter@kde.org>  Thu, 08 Jan 2015 18:36:20 +0100
 
