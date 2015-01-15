@@ -1,4 +1,4 @@
-muon (4:5.1.95-0ubuntu1) UNRELEASED; urgency=medium
+muon (4:5.1.95-0ubuntu1) vivid; urgency=medium
 
   [ Harald Sitter ]
   * New upstream release based on KDE Frameworks 5
@@ -11,7 +11,7 @@ muon (4:5.1.95-0ubuntu1) UNRELEASED; urgency=medium
   [ Jonathan Riddell ]
   * New upstream beta release
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 14 Jan 2015 13:25:47 +0100
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 15 Jan 2015 01:33:55 +0100
 
 muon (2.2.0-0ubuntu5) utopic; urgency=medium
 
