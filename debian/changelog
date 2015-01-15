@@ -1,5 +1,6 @@
-muon (5.1.50-0ubuntu1) UNRELEASED; urgency=medium
+muon (4:5.1.95-0ubuntu1) UNRELEASED; urgency=medium
 
+  [ Harald Sitter ]
   * New upstream release based on KDE Frameworks 5
   * muon-installer is no more remove binary package and all references
   * Drop all patches, they all came from upstream anyway
@@ -7,7 +8,10 @@ muon (5.1.50-0ubuntu1) UNRELEASED; urgency=medium
   * Fix lintian warnings and ignore all that are bogus or not worth
     fixing
 
- -- Harald Sitter <sitter@kde.org>  Thu, 08 Jan 2015 18:36:20 +0100
+  [ Jonathan Riddell ]
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 14 Jan 2015 13:25:47 +0100
 
 muon (2.2.0-0ubuntu5) utopic; urgency=medium
 
