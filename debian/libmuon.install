@@ -1,9 +1,8 @@
 etc/dbus-1/system.d/org.kde.muon.repo.conf
 usr/lib/*/libMuonApt.so
+usr/lib/*/libMuonCommon.so
 usr/lib/*/libMuonNotifiers.so
 usr/lib/*/libexec/muon_repo_helper
-usr/lib/*/libmuonprivate.so.5
-usr/lib/*/libmuonprivate.so.5.*
 usr/lib/*/qt5/plugins/muon-notifier/
 usr/lib/*/qt5/plugins/muon/
 usr/lib/*/qt5/qml/org/kde/muon
