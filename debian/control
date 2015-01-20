@@ -101,6 +101,7 @@ Depends: muon-common (= ${source:Version}),
          muon-updater,
          ubuntu-release-upgrader-qt,
          update-notifier-common,
+         python3,
          ${misc:Depends},
          ${shlibs:Depends}
 Description: update notifier for KDE
