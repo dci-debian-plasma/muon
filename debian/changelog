@@ -1,4 +1,4 @@
-muon (4:5.1.95-0ubuntu1) vivid; urgency=medium
+muon (4:5.1.95+git20150120-0ubuntu1) vivid; urgency=medium
 
   [ Harald Sitter ]
   * New upstream release based on KDE Frameworks 5
