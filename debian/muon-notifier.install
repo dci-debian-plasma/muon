@@ -1,6 +1,6 @@
 usr/lib/*/qt5/qml/org/kde/muonnotifier/
 usr/share/kservices5/plasma-applet-org.kde.muonnotifier.desktop
+usr/share/locale/*/LC_MESSAGES/plasma_applet_org.kde.muonnotifier.mo
 usr/share/muonabstractnotifier
 usr/share/muonapplicationnotifier/
 usr/share/plasma/plasmoids/org.kde.muonnotifier/
-usr/share/locale/*/LC_MESSAGES/plasma_applet_org.kde.muonnotifier.mo

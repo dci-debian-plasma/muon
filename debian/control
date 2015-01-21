@@ -99,7 +99,6 @@ Package: muon-notifier
 Architecture: any
 Depends: muon-common (= ${source:Version}),
          muon-updater,
-         python3,
          ubuntu-release-upgrader-qt,
          update-notifier-common,
          ${misc:Depends},
@@ -112,7 +111,11 @@ Description: update notifier for KDE
 
 Package: libmuon
 Architecture: any
-Depends: kdesudo, software-properties-kde, ${misc:Depends}, ${shlibs:Depends}
+Depends: kdesudo,
+         python3,
+         software-properties-kde,
+         ${misc:Depends},
+         ${shlibs:Depends}
 Breaks: libmuonprivate1, muon-installer (<< 1.3.65-0ubuntu2)
 Replaces: libmuonprivate1, muon-installer (<< 1.3.65-0ubuntu2)
 Description: Runtime files for the Muon package management suite
