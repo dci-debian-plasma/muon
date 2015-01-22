@@ -1,3 +1,10 @@
+muon (4:5.1.95+git20150120-0ubuntu2) vivid; urgency=medium
+
+  * Make libmuon replace and break libmuonprivate2, they clash on
+    the translation files.
+
+ -- Harald Sitter <sitter@kde.org>  Thu, 22 Jan 2015 09:22:23 +0100
+
 muon (4:5.1.95+git20150120-0ubuntu1) vivid; urgency=medium
 
   [ Harald Sitter ]
