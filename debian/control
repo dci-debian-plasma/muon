@@ -112,8 +112,8 @@ Description: update notifier for KDE
 Package: libmuon
 Architecture: any
 Depends: kdesudo, software-properties-kde, ${misc:Depends}, ${shlibs:Depends}
-Breaks: libmuonprivate1, muon-installer (<< 1.3.65-0ubuntu2)
-Replaces: libmuonprivate1, muon-installer (<< 1.3.65-0ubuntu2)
+Breaks: libmuonprivate1, libmuonprivate2, muon-installer (<< 1.3.65-0ubuntu2)
+Replaces: libmuonprivate1, libmuonprivate2, muon-installer (<< 1.3.65-0ubuntu2)
 Description: Runtime files for the Muon package management suite
  The Muon package management suite is a collection of package management
  applications built on the KDE platform.
