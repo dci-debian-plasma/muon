@@ -1,8 +1,8 @@
-muon (4:5.2.0-0ubuntu1) UNRELEASED; urgency=medium
+muon (4:5.2.0-0ubuntu1) vivid; urgency=medium
 
   * New upstream release
 
- -- Harald Sitter <sitter@kde.org>  Mon, 26 Jan 2015 13:55:47 +0100
+ -- Harald Sitter <sitter@kde.org>  Tue, 27 Jan 2015 14:56:24 +0100
 
 muon (4:5.1.95+git20150120-0ubuntu2) vivid; urgency=medium
 
