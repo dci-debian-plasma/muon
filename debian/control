@@ -2,7 +2,7 @@ Source: muon
 Section: kde
 Priority: optional
 Maintainer: Debian/Kubuntu Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
-XSBC-Original-Maintainer: Jonathan Thomas <echidnaman@kubuntu.org>
+Uploaders: Maximiliano Curia <maxy@debian.org>
 Build-Depends: cmake,
                debhelper (>= 9.0.0~),
                extra-cmake-modules,
