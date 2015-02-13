@@ -1,7 +1,7 @@
-Format: http://dep.debian.net/deps/dep5/
-Upstream-Name: Muon Package Management Suite
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: muon
 Upstream-Contact: Jonathan Thomas <echidnaman@kubuntu.org>
-Source: https://projects.kde.org/projects/extragear/sysadmin/muon/repository
+Source: git://anongit.kde.org/muon
 
 Files: *
 Copyright: 2009-2010, Jonathan Thomas <echidnaman@kubuntu.org>
