@@ -128,8 +128,8 @@ Description: Runtime files for the Muon package management suite
 
 Package: muon-dbg
 Section: debug
-Architecture: any
 Priority: extra
+Architecture: any
 Depends: libmuon (= ${binary:Version}),
          muon (= ${binary:Version}) | muon-updater (= ${binary:Version}) | muon-notifier (= ${binary:Version}),
          ${misc:Depends}
