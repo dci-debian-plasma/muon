@@ -2,6 +2,7 @@ muon (4:5.2.1-0ubuntu1) UNRELEASED; urgency=medium
 
   * New upstream release 
   * Add missing .mo files
+  * Undo last action. 
 
  -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 19 Feb 2015 14:29:19 -0800
 

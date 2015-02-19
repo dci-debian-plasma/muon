@@ -2,5 +2,5 @@ usr/bin/muon
 usr/share/applications/muon.desktop
 usr/share/config.kcfg/muon.kcfg
 usr/share/icons/hicolor/*/apps/muon.*
-usr/share/locale/*/LC_MESSAGES/*
+usr/share/locale/*/LC_MESSAGES/muon.mo
 usr/share/muon/muonui.rc
