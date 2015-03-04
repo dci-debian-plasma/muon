@@ -1,3 +1,9 @@
+muon (4:5.2.1+git20150304-0ubuntu1) vivid; urgency=medium
+
+  * New upstream snapshot to get fixed categories
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 04 Mar 2015 18:05:04 +0100
+
 muon (4:5.2.1git20150304-0ubuntu1) vivid; urgency=medium
 
   * New upstream snapshot
