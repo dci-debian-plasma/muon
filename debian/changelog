@@ -1,3 +1,9 @@
+muon (4:5.2.2-0ubuntu2) vivid; urgency=medium
+
+  * Remove muon-installer.mo from .install no longer included
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 24 Mar 2015 20:09:49 +0100
+
 muon (4:5.2.2-0ubuntu1) vivid; urgency=medium
 
   * New upstream release
