@@ -1,9 +1,47 @@
+muon (4:5.2.2a-0ubuntu1) vivid; urgency=medium
+
+  * Add back muon-installer.mo
+  * Fixed upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 24 Mar 2015 23:06:35 +0100
+
 muon (4:5.2.2-1~) UNRELEASED; urgency=medium
 
   * New upstream release (5.2.1).
   * New upstream release (5.2.2).
 
  -- Maximiliano Curia <maxy@debian.org>  Wed, 25 Mar 2015 09:48:55 +0100
+
+muon (4:5.2.2-0ubuntu2) vivid; urgency=medium
+
+  * Remove muon-installer.mo from .install no longer included
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 24 Mar 2015 20:09:49 +0100
+
+muon (4:5.2.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Tue, 24 Mar 2015 07:36:31 -0700
+
+muon (4:5.2.1+git20150304-0ubuntu1) vivid; urgency=medium
+
+  * New upstream snapshot to get fixed categories
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 04 Mar 2015 18:05:04 +0100
+
+muon (4:5.2.1git20150304-0ubuntu1) vivid; urgency=medium
+
+  * New upstream snapshot
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 04 Mar 2015 15:33:43 +0100
+
+muon (4:5.2.1-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release 
+  * Add missing .mo files
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 23 Feb 2015 09:45:04 -0800
 
 muon (4:5.2.0-1) experimental; urgency=medium
 
