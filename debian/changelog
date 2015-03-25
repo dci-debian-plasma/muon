@@ -1,4 +1,10 @@
-muon (4:5.2.2a-0ubuntu1) vivid; urgency=medium
+muon (4:5.2.2-1-0ubuntu2) vivid; urgency=medium
+
+  * Add build-dep on libkf5kdelibs4support-dev and kubuntu_detect-kdelibs4support.diff
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 25 Mar 2015 09:59:22 +0100
+
+muon (4:5.2.2-1-0ubuntu1) vivid; urgency=medium
 
   * Add back muon-installer.mo
   * Fixed upstream release
