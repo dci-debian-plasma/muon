@@ -1,1 +1,2 @@
-kubuntu_detect-kdelibs4support.diff
+upstream_check-for-KDELibs4Support.patch
+upstream_Change-Join-the-Game-url.patch

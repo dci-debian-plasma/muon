@@ -1,3 +1,12 @@
+muon (4:5.2.2-1-0ubuntu3) UNRELEASED; urgency=medium
+
+  * Replace kubuntu_detect-kdelibs4support.diff with upstream format-patch
+    upstream_check-for-KDELibs4Support.patch (no code change)
+  * Add upstream patch upstream_Change-Join-the-Game-url.patch fixing the
+    kde-join-the-game URL in the default muon-discover banner
+
+ -- Harald Sitter <sitter@kde.org>  Wed, 01 Apr 2015 09:08:53 +0200
+
 muon (4:5.2.2-1-0ubuntu2) vivid; urgency=medium
 
   * Add build-dep on libkf5kdelibs4support-dev and kubuntu_detect-kdelibs4support.diff

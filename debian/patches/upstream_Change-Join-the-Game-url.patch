@@ -1,0 +1,24 @@
+From 526f980e8c885830d4fcb0aad6df83424464e860 Mon Sep 17 00:00:00 2001
+From: Aleix Pol <aleixpol@kde.org>
+Date: Tue, 31 Mar 2015 00:34:29 +0200
+Subject: [PATCH] Change Join the Game url
+
+---
+ discover/featured.json | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/discover/featured.json b/discover/featured.json
+index 64ec8bb..e2358a7 100644
+--- a/discover/featured.json
++++ b/discover/featured.json
+@@ -12,6 +12,6 @@
+         "image": "http://kde.org/images/teaser/jointhegame.gif",
+         "text": "Support KDE",
+         "comment": "Join the Game!",
+-        "url": "http://jointhegame.kde.org"
++        "url": "https://relate.kde.org/civicrm/contribute/transact?reset=1&id=5"
+     }
+ ]
+-- 
+2.1.4
+
