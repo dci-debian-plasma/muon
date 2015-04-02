@@ -1,3 +1,10 @@
+muon (4:5.2.2-1-0ubuntu4) vivid; urgency=medium
+
+  * Add upstream_notifyrc-path.diff to fix install location of notifyrc
+    files
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 02 Apr 2015 12:09:05 +0200
+
 muon (4:5.2.2-1-0ubuntu3) vivid; urgency=medium
 
   * Replace kubuntu_detect-kdelibs4support.diff with upstream format-patch
