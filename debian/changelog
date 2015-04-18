@@ -1,3 +1,9 @@
+muon (4:5.2.95-0ubuntu1) UNRELEASED; urgency=medium
+
+  * Plasma 5.3 beta
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sat, 18 Apr 2015 14:48:51 +0200
+
 muon (4:5.2.2-1-0ubuntu4) vivid; urgency=medium
 
   * Add upstream_notifyrc-path.diff to fix install location of notifyrc
