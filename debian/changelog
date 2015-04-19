@@ -1,6 +1,7 @@
 muon (4:5.2.95-0ubuntu1) UNRELEASED; urgency=medium
 
   * Plasma 5.3 beta
+  * Add muon-notifier.mo
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Sat, 18 Apr 2015 14:48:51 +0200
 
