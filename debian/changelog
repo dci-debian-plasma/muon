@@ -1,9 +1,10 @@
-muon (4:5.2.95-0ubuntu1) UNRELEASED; urgency=medium
+muon (4:5.3.0-0ubuntu1) UNRELEASED; urgency=medium
 
   * Plasma 5.3 beta
   * Add muon-notifier.mo
+  * new upstream release
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Sat, 18 Apr 2015 14:48:51 +0200
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 23 Apr 2015 17:06:12 +0200
 
 muon (4:5.2.2-1-0ubuntu4) vivid; urgency=medium
 
