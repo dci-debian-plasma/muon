@@ -1,3 +1,10 @@
+muon (4:5.2.2-1-0ubuntu4.1) vivid; urgency=medium
+
+  * Add upstream_notifications.diff from upstream to prevent repeated
+    notification popups LP: #1449583
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 28 Apr 2015 16:10:36 +0200
+
 muon (4:5.2.2-1-0ubuntu4) vivid; urgency=medium
 
   * Add upstream_notifyrc-path.diff to fix install location of notifyrc
