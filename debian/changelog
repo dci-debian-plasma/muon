@@ -1,3 +1,10 @@
+muon (4:5.2.2-1-0ubuntu4.2) vivid; urgency=medium
+
+  * Add upstream_init-application-notifier.diff LP: #1461725 to initialise
+    the application notifier
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 04 Jun 2015 02:42:46 +0200
+
 muon (4:5.2.2-1-0ubuntu4.1) vivid; urgency=medium
 
   * Add upstream_notifications.diff from upstream to prevent repeated
