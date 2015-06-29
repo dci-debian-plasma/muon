@@ -58,12 +58,14 @@ muon (4:5.2.2-1-0ubuntu2) vivid; urgency=medium
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 25 Mar 2015 09:59:22 +0100
 
-muon (4:5.2.2-1-0ubuntu1) vivid; urgency=medium
+muon (4:5.3.1-1~) UNRELEASED; urgency=medium
 
-  * Add back muon-installer.mo
-  * Fixed upstream release
+  * New upstream release (5.2.1).
+  * New upstream release (5.2.2).
+  * New upstream release (5.3.0).
+  * New upstream release (5.3.1).
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 24 Mar 2015 23:06:35 +0100
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 05 Jun 2015 11:52:00 +0200
 
 muon (4:5.2.2-0ubuntu2) vivid; urgency=medium
 
@@ -95,6 +97,16 @@ muon (4:5.2.1-0ubuntu1) vivid; urgency=medium
   * Add missing .mo files
 
  -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 23 Feb 2015 09:45:04 -0800
+
+muon (4:5.2.0-1) experimental; urgency=medium
+
+  * Prepare initial Debian release.
+  * Add myself as Uploader.
+  * Update build dependencies to build against experimental and to
+    follow cmake.
+  * Update copyright information.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 14 Feb 2015 10:13:40 +0100
 
 muon (4:5.2.0-0ubuntu1) vivid; urgency=medium
 

@@ -5,7 +5,7 @@ usr/lib/*/libMuonNotifiers.so
 usr/lib/*/libexec/muon_repo_helper
 usr/lib/*/qt5/plugins/muon-notifier/
 usr/lib/*/qt5/plugins/muon/
-usr/lib/*/qt5/qml/org/kde/muon
+usr/lib/*/qt5/qml/org/kde/muon/
 usr/share/dbus-1/system-services/org.kde.muon.repo.service
 usr/share/libmuon/
 usr/share/locale/*/LC_MESSAGES/libmuon.mo
