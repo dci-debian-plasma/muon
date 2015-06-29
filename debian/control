@@ -2,10 +2,12 @@ Source: muon
 Section: kde
 Priority: optional
 Maintainer: Debian/Kubuntu Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
-XSBC-Original-Maintainer: Jonathan Thomas <echidnaman@kubuntu.org>
-Build-Depends: cmake,
-               debhelper (>= 9.0.0~),
-               extra-cmake-modules,
+Uploaders: Maximiliano Curia <maxy@debian.org>
+Build-Depends: cmake (>= 2.8.12),
+               debhelper (>= 9),
+               extra-cmake-modules (>= 1.6.0),
+               kinit-dev,
+               kio-dev,
                libdebconf-kde-dev (>= 1.0.0),
                libkf5attica-dev,
                libkf5config-dev,
@@ -14,6 +16,8 @@ Build-Depends: cmake,
                libkf5dbusaddons-dev,
                libkf5declarative-dev,
                libkf5i18n-dev,
+               libkf5iconthemes-dev,
+               libkf5itemviews-dev,
                libkf5kdelibs4support-dev,
                libkf5newstuff-dev,
                libkf5notifications-dev,
@@ -24,14 +28,15 @@ Build-Depends: cmake,
                libphonon4qt5experimental-dev,
                libqapt-dev (>= 3.0.0),
                libqca-qt5-2-dev,
-               libqt5svg5-dev (>= 5.2.0),
+               libqt5svg5-dev (>= 5.4.0~),
                pkg-config,
-               pkg-kde-tools (>= 0.5.0),
+               pkg-kde-tools (>= 0.15.16),
                plasma-framework-dev,
-               qtdeclarative5-dev (>= 5.2.0)
+               qtbase5-dev (>= 5.4.0~),
+               qtdeclarative5-dev (>= 5.4.0~)
 Standards-Version: 3.9.6
-Homepage: https://projects.kde.org/projects/kde/workspace/muon/
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-kde/plasma/muon.git
+Homepage: https://projects.kde.org/projects/kde/workspace/muon
+Vcs-Browser: http://anonscm.debian.org/cgit/pkg-kde/plasma/muon.git
 Vcs-Git: git://anonscm.debian.org/pkg-kde/plasma/muon.git
 
 Package: muon
@@ -101,10 +106,10 @@ Package: muon-notifier
 Architecture: any
 Depends: muon-common (= ${source:Version}),
          muon-updater,
-         ubuntu-release-upgrader-qt,
          update-notifier-common,
          ${misc:Depends},
          ${shlibs:Depends}
+Recommends: ubuntu-release-upgrader-qt
 Description: update notifier for KDE
  The Muon Notifier is an update notification daemon for KDE. It uses the KDE
  Daemon frame (KDED) framework to present the user with update notifications,
@@ -128,8 +133,8 @@ Description: Runtime files for the Muon package management suite
 
 Package: muon-dbg
 Section: debug
-Architecture: any
 Priority: extra
+Architecture: any
 Depends: libmuon (= ${binary:Version}),
          muon (= ${binary:Version}) | muon-updater (= ${binary:Version}) | muon-notifier (= ${binary:Version}),
          ${misc:Depends}

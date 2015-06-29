@@ -17,4 +17,5 @@ override_dh_makeshlibs:
 	$(overridden_command) -Xusr/lib/$(DEB_HOST_MULTIARCH)/qt5/plugins/muon* -V
 
 # FIXME: tests are broken at this time
-.PHONY: override_dh_auto_test
+override_dh_auto_test:
+	:
