@@ -1,11 +1,11 @@
-muon (4:5.3.1-1~) UNRELEASED; urgency=medium
+muon (4:5.3.1-1) unstable; urgency=medium
 
   * New upstream release (5.2.1).
   * New upstream release (5.2.2).
   * New upstream release (5.3.0).
   * New upstream release (5.3.1).
 
- -- Maximiliano Curia <maxy@debian.org>  Fri, 05 Jun 2015 11:52:00 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 30 Jun 2015 12:05:56 +0200
 
 muon (4:5.2.2-0ubuntu2) vivid; urgency=medium
 
