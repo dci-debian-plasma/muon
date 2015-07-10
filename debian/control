@@ -106,7 +106,6 @@ Package: muon-notifier
 Architecture: any
 Depends: muon-common (= ${source:Version}),
          muon-updater,
-         update-notifier-common,
          ${misc:Depends},
          ${shlibs:Depends}
 Recommends: ubuntu-release-upgrader-qt
