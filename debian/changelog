@@ -5,6 +5,12 @@ muon (4:5.3.2-1) unstable; urgency=medium
 
  -- Maximiliano Curia <maxy@debian.org>  Tue, 30 Jun 2015 23:04:58 +0200
 
+muon (4:5.3.2-0ubuntu1) wily; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 02 Jul 2015 12:32:50 +0000
+
 muon (4:5.3.1-0ubuntu1) wily; urgency=medium
 
   [ Jonathan Riddell ]
