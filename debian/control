@@ -137,7 +137,7 @@ Architecture: any
 Depends: libmuon (= ${binary:Version}),
          muon (= ${binary:Version}) | muon-updater (= ${binary:Version}) | muon-notifier (= ${binary:Version}),
          ${misc:Depends}
-Recommends: kdelibs5-dbg, qapt-dbg
+Recommends: qapt-dbg
 Description: Muon debugging symbols
  This package contains debugging symbols for Muon.
  When Muon crashes, in most cases this package is
