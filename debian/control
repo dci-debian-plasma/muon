@@ -76,8 +76,7 @@ Description: Muon package manager suite (common data files)
 
 Package: muon-discover
 Architecture: any
-Depends: app-install-data,
-         apt-xapian-index,
+Depends: apt-xapian-index,
          libmuon (= ${binary:Version}),
          libqapt3-runtime,
          muon-common (= ${source:Version}),
