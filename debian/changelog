@@ -1,9 +1,9 @@
-muon (4:5.3.95-0ubuntu1) UNRELEASED; urgency=medium
+muon (4:5.3.95-0ubuntu1) wily; urgency=medium
 
   * Change kdesudo dependency to pkexec
   * new upstream beta release
 
- -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 07 Aug 2015 18:18:20 +0200
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 10 Aug 2015 23:18:23 +0200
 
 muon (4:5.3.2-0ubuntu1) wily; urgency=medium
 
