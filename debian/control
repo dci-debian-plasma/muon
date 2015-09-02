@@ -82,7 +82,6 @@ Depends: apt-xapian-index,
          muon-common (= ${source:Version}),
          ${misc:Depends},
          ${shlibs:Depends}
-Recommends: app-install-data-partner, ubuntu-sso-client
 Description: Utility for browsing, installing, and removing applications
  Muon Discover will help you browse through the huge applications library you
  have available and help you find the applications you're looking for.
