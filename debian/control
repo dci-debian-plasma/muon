@@ -115,7 +115,7 @@ Description: update notifier for KDE
 
 Package: libmuon
 Architecture: any
-Depends: kdesudo,
+Depends: policykit-1,
          python3,
          software-properties-kde,
          ${misc:Depends},
