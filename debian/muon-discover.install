@@ -1,6 +1,6 @@
 usr/bin/muon-discover
 usr/share/applications/muon-discover-category.desktop
-usr/share/applications/muon-discover.desktop
+usr/share/applications/org.kde.discover.desktop
 usr/share/desktoptheme/muon-contenttheme/
 usr/share/kxmlgui5/muondiscover/
 usr/share/locale/*/LC_MESSAGES/muon-discover.mo
