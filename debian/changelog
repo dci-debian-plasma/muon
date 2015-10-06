@@ -1,4 +1,4 @@
-muon (4:5.4.2-1~) UNRELEASED; urgency=medium
+muon (4:5.4.2-1) unstable; urgency=medium
 
   [ Scott Kitterman ]
   * Team upload.
@@ -10,7 +10,7 @@ muon (4:5.4.2-1~) UNRELEASED; urgency=medium
   * New upstream release (5.4.2).
   * Update install files.
 
- -- Maximiliano Curia <maxy@debian.org>  Thu, 01 Oct 2015 17:09:07 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 06 Oct 2015 07:51:43 +0200
 
 muon (4:5.4.1-1) unstable; urgency=medium
 
