@@ -1,4 +1,4 @@
-muon (4:5.4.3-0ubuntu1) UNRELEASED; urgency=medium
+muon (4:5.4.3-0ubuntu1) xenial; urgency=medium
 
   [ Scarlett Clark ]
   * Vivid backport
@@ -7,7 +7,7 @@ muon (4:5.4.3-0ubuntu1) UNRELEASED; urgency=medium
   [ Philip Muškovac ]
   * New upstream bugfix release (LP: #1518598)
 
- -- Philip Muškovac <yofel@kubuntu.org>  Sun, 22 Nov 2015 14:13:24 +0100
+ -- Philip Muškovac <yofel@kubuntu.org>  Sun, 22 Nov 2015 16:38:55 +0100
 
 muon (4:5.4.2-0ubuntu1) wily; urgency=medium
 
