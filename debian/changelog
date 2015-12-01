@@ -1,8 +1,8 @@
-muon (4:5.4.3-1~) UNRELEASED; urgency=medium
+muon (4:5.4.3-1) unstable; urgency=medium
 
   * New upstream release (5.4.3).
 
- -- Maximiliano Curia <maxy@debian.org>  Thu, 05 Nov 2015 16:54:40 +0100
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 01 Dec 2015 11:45:33 +0100
 
 muon (4:5.4.2-1) unstable; urgency=medium
 
