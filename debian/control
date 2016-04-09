@@ -9,6 +9,7 @@ Build-Depends: cmake (>= 2.8.12),
                kinit-dev,
                kio-dev,
                libdebconf-kde-dev (>= 1.0.0),
+               libkf5archive-dev,
                libkf5attica-dev,
                libkf5config-dev,
                libkf5configwidgets-dev,
@@ -22,6 +23,7 @@ Build-Depends: cmake (>= 2.8.12),
                libkf5newstuff-dev,
                libkf5notifications-dev,
                libkf5solid-dev,
+               libkf5textwidgets-dev,
                libkf5wallet-dev,
                libkf5widgetsaddons-dev,
                libphonon4qt5-dev,
@@ -42,11 +44,10 @@ Vcs-Git: git://anonscm.debian.org/pkg-kde/plasma/muon.git
 Package: muon
 Architecture: any
 Depends: apt-xapian-index,
-         libmuon (= ${binary:Version}),
-         libqapt3-runtime,
+         libqapt3 (>= 3.0.1+git20160315),
+         libqapt3-runtime (>= 3.0.1+git20160315),
          ${misc:Depends},
          ${shlibs:Depends}
-Recommends: muon-updater
 Description: package manager for KDE
  Muon is a graphical package manager for KDE.
  .
@@ -66,79 +67,12 @@ Description: package manager for KDE
   * Support for download the latest changelog of a package
   * Package screenshots
 
-Package: muon-common
-Architecture: all
-Depends: ${misc:Depends}
-Description: Muon package manager suite (common data files)
- Muon is a graphical package manager for the Plasma workspace.
- .
- This package contains data files shared by various parts of the Muon suite.
-
-Package: muon-discover
-Architecture: any
-Depends: app-install-data,
-         apt-xapian-index,
-         libmuon (= ${binary:Version}),
-         libqapt3-runtime,
-         muon-common (= ${source:Version}),
-         ${misc:Depends},
-         ${shlibs:Depends}
-Recommends: app-install-data-partner, ubuntu-sso-client
-Description: Utility for browsing, installing, and removing applications
- Muon Discover will help you browse through the huge applications library you
- have available and help you find the applications you're looking for.
- .
- To install or remove software using the Center, you need administrator
- access on the computer.
-
-Package: muon-updater
-Architecture: any
-Depends: libmuon (= ${binary:Version}),
-         libqapt3-runtime,
-         ${misc:Depends},
-         ${shlibs:Depends}
-Recommends: muon-notifier
-Description: update manager for KDE
- Muon Updater is a graphical update manager for KDE. It is part of the Muon
- family of software and provides an interface similar to that of Muon.
-
-Package: muon-notifier
-Architecture: any
-Depends: muon-common (= ${source:Version}),
-         muon-updater,
-         update-notifier-common,
-         ${misc:Depends},
-         ${shlibs:Depends}
-Recommends: ubuntu-release-upgrader-qt
-Description: update notifier for KDE
- The Muon Notifier is an update notification daemon for KDE. It uses the KDE
- Daemon frame (KDED) framework to present the user with update notifications,
- providing an opportunity to launch the Muon Updater to deal with these
- updates.
-
-Package: libmuon
-Architecture: any
-Depends: policykit-1,
-         python3,
-         software-properties-kde,
-         ${misc:Depends},
-         ${shlibs:Depends}
-Breaks: libmuonprivate1, libmuonprivate2, muon-installer (<< 1.3.65-0ubuntu2)
-Replaces: libmuonprivate1, libmuonprivate2, muon-installer (<< 1.3.65-0ubuntu2)
-Description: Runtime files for the Muon package management suite
- The Muon package management suite is a collection of package management
- applications built on the KDE platform.
- .
- This package contains runtime libraries
-
 Package: muon-dbg
 Section: debug
 Priority: extra
 Architecture: any
-Depends: libmuon (= ${binary:Version}),
-         muon (= ${binary:Version}) | muon-updater (= ${binary:Version}) | muon-notifier (= ${binary:Version}),
-         ${misc:Depends}
-Recommends: kdelibs5-dbg, qapt-dbg
+Depends: muon (= ${binary:Version}), ${misc:Depends}
+Recommends: qapt-dbg
 Description: Muon debugging symbols
  This package contains debugging symbols for Muon.
  When Muon crashes, in most cases this package is

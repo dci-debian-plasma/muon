@@ -1,3 +1,18 @@
+muon (4:5.5.0) UNRELEASED; urgency=medium
+
+  * Git snapshot from KDE git repo (Closes LP: #1562406)
+  * Removing files and packages in control and install files for
+    software which has been migrated else where.
+  * Removing patches because we are Ubuntu, not Debian!
+
+ -- Clive Johnston <clivejo@aol.com>  Sat, 26 Mar 2016 20:50:44 +0000
+
+muon (4:5.4.3-1) unstable; urgency=medium
+
+  * New upstream release (5.4.3).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 01 Dec 2015 11:45:33 +0100
+
 muon (4:5.4.3-0ubuntu1) xenial; urgency=medium
 
   [ Scarlett Clark ]
@@ -9,17 +24,43 @@ muon (4:5.4.3-0ubuntu1) xenial; urgency=medium
 
  -- Philip Muškovac <yofel@kubuntu.org>  Sun, 22 Nov 2015 16:38:55 +0100
 
+muon (4:5.4.2-1) unstable; urgency=medium
+
+  [ Scott Kitterman ]
+  * Team upload.
+  * Patch out Canonical support information used for Ubuntu - We're Debian
+    (Closes: #791875)
+    - Added debian/patches/no-canonical-support
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.4.2).
+  * Update install files.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 06 Oct 2015 07:51:43 +0200
+
 muon (4:5.4.2-0ubuntu1) wily; urgency=medium
 
   * New upstream release
 
  -- Scarlett Clark <sgclark@kubuntu.org>  Fri, 02 Oct 2015 15:58:40 +0100
 
+muon (4:5.4.1-1) unstable; urgency=medium
+
+  * New upstream release (5.4.1).
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 11 Sep 2015 18:44:50 +0200
+
 muon (4:5.4.1-0ubuntu1) wily; urgency=medium
 
   * new upstream release
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 08 Sep 2015 10:21:43 +0100
+
+muon (4:5.4.0-1) unstable; urgency=medium
+
+  * New upstream release (5.4.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 03 Sep 2015 18:24:40 +0200
 
 muon (4:5.4.0-0ubuntu1) wily; urgency=medium
 
@@ -33,6 +74,28 @@ muon (4:5.3.95-0ubuntu1) wily; urgency=medium
   * new upstream beta release
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 10 Aug 2015 23:18:23 +0200
+
+muon (4:5.3.2-3) unstable; urgency=medium
+
+  * Team upload.
+  * Drop muon-discover depends on the no longer existing app-install-data
+    (Closes: #792358)
+
+ -- Scott Kitterman <scott@kitterman.com>  Mon, 20 Jul 2015 02:15:50 -0400
+
+muon (4:5.3.2-2) unstable; urgency=medium
+
+  * Drop update-notifier-common dependency. (Closes: #792011) Thanks to
+    Achim Schaefer
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 10 Jul 2015 10:40:50 +0200
+
+muon (4:5.3.2-1) unstable; urgency=medium
+
+  * New upstream release (5.3.2).
+  * Update copyright information.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 30 Jun 2015 23:04:58 +0200
 
 muon (4:5.3.2-0ubuntu1) wily; urgency=medium
 
@@ -49,7 +112,7 @@ muon (4:5.3.1-0ubuntu1) wily; urgency=medium
 
   [ Scarlett Clark ]
   * Vivid backport
-  * wrap-and-sort 
+  * wrap-and-sort
 
   [ Jonathan Riddell ]
   * New upstream release
@@ -94,14 +157,14 @@ muon (4:5.2.2-1-0ubuntu2) vivid; urgency=medium
 
  -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 25 Mar 2015 09:59:22 +0100
 
-muon (4:5.3.1-1~) UNRELEASED; urgency=medium
+muon (4:5.3.1-1) unstable; urgency=medium
 
   * New upstream release (5.2.1).
   * New upstream release (5.2.2).
   * New upstream release (5.3.0).
   * New upstream release (5.3.1).
 
- -- Maximiliano Curia <maxy@debian.org>  Fri, 05 Jun 2015 11:52:00 +0200
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 30 Jun 2015 12:05:56 +0200
 
 muon (4:5.2.2-0ubuntu2) vivid; urgency=medium
 
@@ -129,7 +192,7 @@ muon (4:5.2.1git20150304-0ubuntu1) vivid; urgency=medium
 
 muon (4:5.2.1-0ubuntu1) vivid; urgency=medium
 
-  * New upstream release 
+  * New upstream release
   * Add missing .mo files
 
  -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 23 Feb 2015 09:45:04 -0800
