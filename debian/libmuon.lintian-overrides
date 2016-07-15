@@ -1,6 +1,0 @@
-# Private libs
-libmuon: package-name-doesnt-match-sonames libMuonApt libMuonCommon libMuonNotifiers
-libmuon: shlib-without-versioned-soname usr/lib/*/libMuonApt.so libMuonApt.so
-libmuon: shlib-without-versioned-soname usr/lib/*/libMuonNotifiers.so libMuonNotifiers.so
-libmuon: shlib-without-versioned-soname usr/lib/*/libMuonCommon.so libMuonCommon.so
-libmuon: postinst-must-call-ldconfig usr/lib/*/libMuonNotifiers.so

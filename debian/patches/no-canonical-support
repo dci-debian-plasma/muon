@@ -6,11 +6,13 @@ Author: Scott Kitterman <scott@kitterman.com>
 Origin: vendor
 Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=791875
 Forwarded: not-needed
-Last-Update: 2015-09-15
+Last-Update: 2016-07-14
 
---- muon-5.4.1.orig/muon/DetailsTabs/MainTab.cpp
-+++ muon-5.4.1/muon/DetailsTabs/MainTab.cpp
-@@ -179,19 +179,19 @@ void MainTab::refresh()
+Index: muon-5.6.0/src/DetailsTabs/MainTab.cpp
+===================================================================
+--- muon-5.6.0.orig/src/DetailsTabs/MainTab.cpp	2016-07-14 21:16:59.311134381 -0400
++++ muon-5.6.0/src/DetailsTabs/MainTab.cpp	2016-07-14 21:16:59.303134381 -0400
+@@ -178,19 +178,19 @@
      m_packageShortDescLabel->setText(m_package->shortDescription());
  
      m_descriptionBrowser->setText(m_package->longDescription());

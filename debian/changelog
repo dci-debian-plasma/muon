@@ -1,3 +1,19 @@
+muon (4:5.6.0-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Clive Johnston ]
+  * New upstream release 5.6.0 (Closes LP: #1562406)
+    - Drop binaries that conflict with plasma-discover (Closes: #831279) 
+
+  [ Scott Kitterman ]
+  * Update debian/patches/no-canonical-support for new file structure
+  * Drop muon-dbg binary and migrate to -dbgsym package and update
+    debian/rules
+  * Bump standards version to 3.9.8 without further change
+
+ -- Scott Kitterman <scott@kitterman.com>  Thu, 14 Jul 2016 21:27:43 -0400
+
 muon (4:5.4.3-1) unstable; urgency=medium
 
   * New upstream release (5.4.3).

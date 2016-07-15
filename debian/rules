@@ -4,8 +4,11 @@ include /usr/share/pkg-kde-tools/qt-kde-team/3/debian-qt-kde.mk
 
 DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
+override_dh_auto_install:
+	$(overridden_command) --destdir=debian/tmp
+
 override_dh_strip:
-	$(overridden_command) --dbg-package=muon-dbg
+	$(overridden_command) --dbgsym-migration='muon-dbg (<= 4:5.6.0-1~~)'
 
 # Do not pull plugins into the shlibs file, it makes lintian angry.
 # This happens because dh_makeshlibs will look for sonames matching
