@@ -1,3 +1,9 @@
+muon (4:5.6.0-2) UNRELEASED; urgency=medium
+
+  * Update watch file to point to new location
+
+ -- Rohan Garg <rohan@kde.org>  Thu, 25 Aug 2016 13:08:26 +0200
+
 muon (4:5.6.0-1) unstable; urgency=medium
 
   * Team upload.
